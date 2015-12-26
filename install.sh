@@ -1,3 +1,5 @@
 DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
-cp "$DIR/.gitconfig" ~
-echo "Installed to `readlink -f ~/.gitconfig`"
+SOURCE="$DIR/.gitconfig"
+TARGET="~"
+cp "$SOURCE" "$TARGET"
+echo "Installed to $TARGET"
