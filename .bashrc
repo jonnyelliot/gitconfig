@@ -15,3 +15,7 @@ export PATH=/Users/jonny/Library/Android/sdk/platform-tools:$PATH
 export PATH=~/scripts:$PATH
 
 export LUKE_PATH=/usr/local/luke
+
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+. $(brew --prefix)/etc/bash_completion
+fi
