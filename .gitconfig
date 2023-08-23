@@ -2,55 +2,40 @@
 	name = Jonathan Elliot
 	email = jonny.elliot@gmail.com
 [gui]
-	fontdiff = -family Monaco -size 14 -weight normal -slant roman -underline 0 -overstrike 0
-        warndetachedcommit = true
-        gcwarning = false
-	fontui = -family \"Microsoft Sans Serif\" -size 13 -weight normal -slant roman -underline 0 -overstrike 0
-#[merge]
- #       tool = tortoisemerge
+	warndetachedcommit = true
+	gcwarning = false
 [alias]
-        cp = cherry-pick
-        s = status -s
-        co = checkout
-        diff = diff --word-diff
-        dc = diff --cached
-        ld = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
-        sl = stash list
-        sa = stash apply
-        ss = stash save
-        sp = stash pop
-        f = "!git ls-files | grep -i"
-        k = !gitk
-        review = "!f() { git push origin HEAD:refs/for/$1; }; f"        
-        newbranch = "!f() { git checkout -b $1 origin/master; }; git fetch; f"
-        gg = !"git gui &"
-        g = !"git gui &"
-        minesince = "!f() { git log $1..origin/develop --pretty=oneline --author='Jonathan Elliot'; }; f"
-        ri = rebase -i
-        rim = rebase -i origin/master
-        rc = rebase --continue
-        ra = rebase --abort
-        lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-        recent = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit -10
-        r = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit -10
-        target = log --date=relative --format='format:Last updated %cd' -1 scripts/autobuild/download/build-target.xml
-        purr = "!git fetch && git pull --rebase"
+	cp = cherry-pick
+	s = status -s
+	co = checkout
+	diff = diff --word-diff
+	dc = diff --cached
+	ld = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
+	sl = stash list
+	sa = stash apply
+	ss = stash save
+	sp = stash pop
+	f = "!git ls-files | grep -i"
+	k = !gitk
+	review = "!f() { git push origin HEAD:refs/for/$1; }; f"	
+	newbranch = "!f() { git checkout -b $1 origin/master; }; git fetch; f"
+	gg = !"git gui &"
+	g = !"git gui &"
+	minesince = "!f() { git log $1..origin/develop --pretty=oneline --author='Jonathan Elliot'; }; f"
+	ri = rebase -i
+	rim = rebase -i origin/master
+	rc = rebase --continue
+	ra = rebase --abort
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	recent = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit -10
+	r = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit -10
+	target = log --date=relative --format='format:Last updated %cd' -1 scripts/autobuild/download/build-target.xml
+	purr = "!git fetch && git pull --rebase"
 [diff]
-        tool = vimdiff
+	tool = vimdiff
 [push]
-        default = simple
-
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
+	default = simple
 [pull]
 	rebase = true
-[core]
-	excludesfile = /Users/jonny/.gitignore_global
-[commit]
-	template = /Users/jonny/.stCommitMsg
 [rebase]
 	autosquash = true
